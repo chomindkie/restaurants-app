@@ -1,16 +1,17 @@
 import React, {useMemo, useState} from "react";
 import {GoogleMap, useLoadScript, MarkerF, OverlayView, OverlayViewF} from "@react-google-maps/api";
-
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import Loading from "@/components/Loading";
 
 export default function Location(props) {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: 'AIzaSyCFFIi3_KvhZY72EVpJUXzKSH00pOjBC7s',
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY,
     });
 
-    if (!isLoaded) return <div>Loading...</div>;
-    console.log("-- MAP LOAD")
+    if (!isLoaded) return <Loading/>;
+    console.log("-- MAP LOAD --- ")
     return (<Map {...props}/>);
 
 }
