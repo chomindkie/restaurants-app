@@ -8,6 +8,7 @@ import styles from "../styles/App.module.css";
 import RestaurantList from "../components/RestaurantList"
 import SearchBar from "@/components/SearchBar";
 import Loading from "@/components/Loading";
+import Location from "@/components/Location";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -51,6 +52,9 @@ export default function Home() {
             <div className="relative m-20">
                 <SearchBar handlerSearch={handlerSearch}/>
             </div>
+            <div style={{width: "100vw", height:600}}>
+                <Location/>
+            </div>
             {
                 loading
                     ? (
@@ -60,25 +64,6 @@ export default function Home() {
                         <div className={styles.section}><RestaurantList restaurants={restaurants}/></div>
                     )
             }
-            {/*<div className={styles.section}>*/}
-            {/*    <RestaurantList restaurants={restaurants}/>*/}
-            {/*</div >*/}
-            {/*</main>*/}
-            {/*<h1 className="title">*/}
-            {/*    Hello!*/}
-            {/*    <Link href="/about">*/}
-            {/*        <h2>Go to About!</h2>*/}
-            {/*    </Link>*/}
-            {/*</h1>*/}
         </>
-        // <>
-        //     <Head>
-        //         <title>{siteTitle}</title>
-        //     </Head>
-        //     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        //         <h2 className={utilStyles.headingLg}>Search</h2>
-        //         <Search />
-        //     </section>
-        // </>
     )
 }
