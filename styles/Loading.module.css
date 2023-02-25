@@ -1,0 +1,7 @@
+.loader {
+    @apply h-1/3 w-full flex justify-center items-center;
+}
+
+.animateItem {
+    @apply animate-spin relative flex h-14 w-14 rounded-sm opacity-75;
+}

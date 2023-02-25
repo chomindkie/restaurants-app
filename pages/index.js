@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import {Inter} from '@next/font/google'
 import getRestaurantsList from './api/getRestaurantsList';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import Link from "next/link";
 import styles from "../styles/App.module.css";
 import RestaurantList from "../components/RestaurantList"
 import SearchBar from "@/components/SearchBar";
+import Loading from "@/components/Loading";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
 
@@ -25,7 +26,7 @@ export default function Home() {
         init()
     }, [])
 
-    async function handlerSearch(keyword){
+    async function handlerSearch(keyword) {
         setLoading(true)
         try {
             const resp = await getRestaurantsList(keyword)
@@ -39,46 +40,45 @@ export default function Home() {
     }
 
     return (
-    <>
-
-      {/*<main className={styles.section}>*/}
-        <div>
-            <title>Find Restaurants</title>
-        </div>
-        <div className={styles.header}>
-            <h1> 🍕🍟 Find Restaurants 🍜🍿</h1>
-        </div>
-        <div className="relative m-20">
-            <SearchBar handlerSearch={handlerSearch}/>
-        </div>
-        {
-            loading
-                ?(
-                    <div> loading </div>
-                )
-                :(
-                    <div className={styles.section}> <RestaurantList restaurants={restaurants}/></div >
-                )
-        }
-        {/*<div className={styles.section}>*/}
-        {/*    <RestaurantList restaurants={restaurants}/>*/}
-        {/*</div >*/}
-      {/*</main>*/}
-          {/*<h1 className="title">*/}
-          {/*    Hello!*/}
-          {/*    <Link href="/about">*/}
-          {/*        <h2>Go to About!</h2>*/}
-          {/*    </Link>*/}
-          {/*</h1>*/}
-    </>
-      // <>
-      //     <Head>
-      //         <title>{siteTitle}</title>
-      //     </Head>
-      //     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-      //         <h2 className={utilStyles.headingLg}>Search</h2>
-      //         <Search />
-      //     </section>
-      // </>
-  )
+        <>
+            {/*<main className={styles.section}>*/}
+            <div>
+                <title>Find Restaurants</title>
+            </div>
+            <div className={styles.header}>
+                <h1> 🍕🍟 Find Restaurants 🍜🍿</h1>
+            </div>
+            <div className="relative m-20">
+                <SearchBar handlerSearch={handlerSearch}/>
+            </div>
+            {
+                loading
+                    ? (
+                        <Loading/>
+                    )
+                    : (
+                        <div className={styles.section}><RestaurantList restaurants={restaurants}/></div>
+                    )
+            }
+            {/*<div className={styles.section}>*/}
+            {/*    <RestaurantList restaurants={restaurants}/>*/}
+            {/*</div >*/}
+            {/*</main>*/}
+            {/*<h1 className="title">*/}
+            {/*    Hello!*/}
+            {/*    <Link href="/about">*/}
+            {/*        <h2>Go to About!</h2>*/}
+            {/*    </Link>*/}
+            {/*</h1>*/}
+        </>
+        // <>
+        //     <Head>
+        //         <title>{siteTitle}</title>
+        //     </Head>
+        //     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        //         <h2 className={utilStyles.headingLg}>Search</h2>
+        //         <Search />
+        //     </section>
+        // </>
+    )
 }
