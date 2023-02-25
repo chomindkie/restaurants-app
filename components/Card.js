@@ -3,10 +3,20 @@ import classNames from "classnames";
 import {AiFillStar} from "react-icons/ai";
 import styles from "../styles/Card.module.css";
 
-const Card = ({title, rating, open, image}) => {
+const Card = ({title, rating, open, image, onClick}) => {
+
+    const _onClick = () => {
+        console.log("--> click")
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+        onClick && onClick()
+    }
 
     return (
-        <div className={classNames([styles.wrapper, styles.wrapperAnime])}>
+        <div className={classNames([styles.wrapper, styles.wrapperAnime])} onClick={_onClick}>
             <div className={styles.header}>
                 <div className={styles.imageWrapper}>
                     <img src={image? image : "/image/default.jpg"} className={styles.image} alt=""/>
@@ -17,7 +27,6 @@ const Card = ({title, rating, open, image}) => {
                             className={classNames([
                                 styles.primaryBadge,
                                 styles.badgeAnime,
-                                // "group",
                             ])}>
                             <AiFillStar/>
                             <span className={classNames([styles.counter, "group-hover:text-gray"])}>{rating}</span>

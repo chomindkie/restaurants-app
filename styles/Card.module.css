@@ -7,12 +7,11 @@
 }
 
 .header {
-    @apply relative mt-2 mx-2;
+    @apply relative pt-2 px-2 w-full;
 }
 
 .imageWrapper {
     @apply object-center aspect-[4/3] rounded-2xl overflow-hidden;
-    /*@apply h-56 rounded-2xl overflow-hidden;*/
 }
 
 .image {
@@ -21,11 +20,13 @@
 
 .textWrapper {
     @apply flex flex-row justify-items-start items-center pt-10 pb-6 w-full px-4;
-    /* @apply flex justify-center; */
 }
 
 .text {
     @apply font-medium font-sans leading-none text-base tracking-wider text-white ml-3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .badgeWrapper {

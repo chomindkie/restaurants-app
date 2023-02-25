@@ -5,3 +5,7 @@
 .animateItem {
     @apply animate-spin relative flex h-14 w-14 rounded-sm opacity-75;
 }
+
+.animateItem2 {
+    @apply animate-spin relative flex h-14 w-14 rounded-sm opacity-75;
+}
