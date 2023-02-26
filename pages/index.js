@@ -6,6 +6,7 @@ import RestaurantList from "../components/RestaurantList"
 import SearchBar from "@/components/SearchBar";
 import Loading from "@/components/Loading";
 import Location from "@/components/Location";
+import Link from "next/link";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -63,10 +64,10 @@ export default function Home() {
             <div className={styles.header}>
                 <h1> 🍕🍟 Find Restaurants 🍜🍿</h1>
             </div>
-            <div className="relative m-20">
+            <div className="relative mt-20">
                 <SearchBar handlerSearch={handlerSearch}/>
             </div>
-            <div style={{width: "100vw", height: 600, marginBottom: 40}}>
+            <div style={{width: "100vw", height: 600, marginBottom: 40, marginTop: 40}} id="google-map-section">
                 <Location restaurants={restaurants} area={area} handlerTarget={handlerTarget} target={target}/>
             </div>
             {

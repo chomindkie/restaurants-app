@@ -7,11 +7,12 @@ const Card = ({title, rating, open, image, onClick}) => {
 
     const _onClick = () => {
         console.log("--> click")
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
+        const element = document.getElementById('google-map-section');
+
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth'});
+        }
+
         onClick && onClick()
     }
 
