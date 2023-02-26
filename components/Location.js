@@ -32,16 +32,16 @@ function Map({restaurants, area, handlerTarget, target}) {
                                         position={restaurant.location}
                                         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
                                     >
-                                        <div style={{width: 200, height: 200}}>
+                                        <div  class="font-sans" style={{width: 200, height: 200}}>
                                             <a className="block rounded-xl bg-[#810000] p-1 sm:p-2 lg:p-4"
                                             >
-                                                <h3 className="text-lg font-bold text-white sm:text-sm">
+                                                <h3 className="text-lg font-normal text-white sm:text-sm">
                                                     {`😋 `+restaurant.name}
                                                 </h3>
-                                                <p className="mt-2 text-xs text-gray-300">
+                                                <p className="mt-2 text-xs font-extralight text-gray-300">
                                                     {restaurant.vicinity}
                                                 </p>
-                                                <div className="mt-2 font-bold text-xs text-white "
+                                                <div className="mt-2 font-normal text-xs text-white "
                                                      onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${restaurant.name}&query_place_id=${restaurant.placeId}`, '_blank')}
                                                 >
                                                     {`🗺️ View on google map`}

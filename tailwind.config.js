@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme')
-
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
     content: [
@@ -15,7 +14,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
+                sans: ['var(--font-mitr)', ...fontFamily.sans]
+
             },
         },
     },

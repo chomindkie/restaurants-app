@@ -1,4 +1,3 @@
-import {Inter} from '@next/font/google'
 import getRestaurantsList from './api/getRestaurantsList';
 import {useEffect, useState} from 'react';
 import styles from "../styles/App.module.css";
@@ -7,8 +6,9 @@ import SearchBar from "@/components/SearchBar";
 import Loading from "@/components/Loading";
 import Location from "@/components/Location";
 import Link from "next/link";
+import Head from "next/head";
 
-const inter = Inter({subsets: ['latin']})
+
 
 export default function Home() {
 
