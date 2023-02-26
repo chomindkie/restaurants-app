@@ -34,15 +34,18 @@ function Map({restaurants, area, handlerTarget, target}) {
                                     >
                                         <div style={{width: 200, height: 200}}>
                                             <a className="block rounded-xl bg-[#810000] p-1 sm:p-2 lg:p-4"
-                                               href=""
-                                               onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${restaurant.name}&query_place_id=${restaurant.placeId}`, '_blank')}
                                             >
                                                 <h3 className="text-lg font-bold text-white sm:text-sm">
-                                                    {restaurant.name}
+                                                    {`😋 `+restaurant.name}
                                                 </h3>
                                                 <p className="mt-2 text-xs text-gray-300">
                                                     {restaurant.vicinity}
                                                 </p>
+                                                <div className="mt-2 font-bold text-xs text-white "
+                                                     onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${restaurant.name}&query_place_id=${restaurant.placeId}`, '_blank')}
+                                                >
+                                                    {`🗺️ View on google map`}
+                                                </div>
                                             </a>
                                         </div>
 
