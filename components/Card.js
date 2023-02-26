@@ -1,11 +1,10 @@
-import React from "react";
+import React, {memo} from "react";
 import classNames from "classnames";
 import styles from "../styles/Card.module.css";
 
 const Card = ({title, rating, image, onClick}) => {
 
     const _onClick = () => {
-        console.log("--> click")
         const element = document.getElementById('google-map-section');
 
         if (element) {
@@ -14,6 +13,7 @@ const Card = ({title, rating, image, onClick}) => {
 
         onClick && onClick()
     }
+    console.log("Card Render")
 
     return (
         <div className={classNames([styles.wrapper, styles.wrapperAnime])} onClick={_onClick}>
@@ -37,4 +37,4 @@ const Card = ({title, rating, image, onClick}) => {
         </div>
     );
 };
-export default Card;
+export default memo(Card);

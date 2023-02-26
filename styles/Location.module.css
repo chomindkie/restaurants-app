@@ -1,4 +1,28 @@
-.map-container {
-    width: 200px;
-    height: 300px;
+.map_container {
+    @apply w-screen mt-10 mb-10;
+    height: 250px;
+}
+
+@media (min-width: 640px) {
+    .map_container{
+        height: 350px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .map_container{
+        height: 450px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .map_container{
+        height: 550px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .map_container{
+        height: 650px;
+    }
 }

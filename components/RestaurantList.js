@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 
 import styles from "../styles/App.module.css";
 import Card from "../components/Card";
@@ -6,6 +6,11 @@ import Card from "../components/Card";
 // function RestaurantList(props) {
 //     const {restaurants} = props
 function RestaurantList({restaurants, handlerTarget}) {
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const onClick = (restaurant) => useCallback(function () {
+        handlerTarget(restaurant.placeId)
+    }, []);
 
     return (
         <main className={styles.section}>
@@ -17,11 +22,7 @@ function RestaurantList({restaurants, handlerTarget}) {
                             title={restaurant.name}
                             rating={restaurant.rating}
                             image={restaurant.image}
-                            onClick={
-                                function () {
-                                    handlerTarget(restaurant.placeId)
-                                }
-                            }
+                            onClick={onClick(restaurant)}
                         />
                     ))}
                 </div>

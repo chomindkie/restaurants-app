@@ -3,9 +3,5 @@
 }
 
 .animateItem {
-    @apply animate-spin relative flex h-14 w-14 rounded-sm opacity-75;
-}
-
-.animateItem2 {
-    @apply animate-spin relative flex h-14 w-14 rounded-sm opacity-75;
+    @apply animate-spin relative flex h-9 w-9 rounded-sm opacity-75 sm:h-10 sm:w-10 md:h-11 md:w-11 lg:h-12 lg:w-12 xl:h-12 xl:w-12 2xl:h-14 2xl:w-14;
 }

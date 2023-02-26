@@ -1,18 +1,17 @@
 import React, {useMemo, useState} from "react";
 import {GoogleMap, useLoadScript, MarkerF, OverlayView, OverlayViewF} from "@react-google-maps/api";
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
-import Loading from "@/components/Loading";
+import styles from "../styles/Location.module.css"
 
 export default function Location(props) {
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const {isLoaded} = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY,
-    });
-
-    if (!isLoaded) return <Loading/>;
     console.log("-- MAP LOAD --- ")
-    return (<Map {...props}/>);
+    return (
+        <div
+            // style={{width: "100vw", height: 600, marginBottom: 40, marginTop: 40}}
+            className= {styles.map_container}
+            id="google-map-section">
+        <Map {...props}/>
+        </div>
+    );
 
 }
 
