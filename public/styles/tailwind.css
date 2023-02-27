@@ -1,0 +1,87 @@
+.section {
+  height: 100%;
+  width: 100%;
+  background-color: transparent
+}
+
+@media (min-width: 768px) {
+  .section {
+    height: 100vh
+  }
+}
+
+/*.container {*/
+
+/*    @apply container mx-auto px-0 md:px-4 py-4;*/
+
+/*}*/
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;
+  gap: 1rem
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+  }
+}
+
+@media (min-width: 1536px) {
+  .layout {
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+  }
+}
+
+.header {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: grid;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700
+}
+
+@media (min-width: 480px) {
+  .header {
+    font-size: 1.875rem;
+    line-height: 2.25rem
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    font-size: 2.25rem;
+    line-height: 2.5rem
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    font-size: 3rem;
+    line-height: 1
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    font-size: 3.75rem;
+    line-height: 1
+  }
+}
+
+@media (min-width: 1536px) {
+  .header {
+    font-size: 4.5rem;
+    line-height: 1
+  }
+}
