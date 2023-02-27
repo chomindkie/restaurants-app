@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build && npm run build:css",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "production": "next build && npm run build:css && next start"
   },
   "dependencies": {
     "@next/font": "^13.2.1",
